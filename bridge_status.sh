@@ -33,7 +33,6 @@ if [ -z "$local_header" ]; then
     exit 1
 fi
 
-# Get network_header
 network_header=$(/usr/local/bin/celestia header network-head --node.store "$celestia_bridge_path" | jq -r '.result.header.height')
 if [ -z "$network_header" ]; then
     send_red_alert "$server_ip"
